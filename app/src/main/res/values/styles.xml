@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="style_text_main">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MainActivity_title" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MainActivity_bold_links">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- GENERAL -->
+    <style name="titles">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/titles</item>
+    </style>
+
+    <style name="subtitles">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@color/subtitles</item>
+
+    </style>
+
+    <style name="button_next" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- ONBOARDING ACTIVITY -->
+    <style name="onboarding_activity_title" parent="titles">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="onboarding_activity_infotext" parent="subtitles">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+    </style>
+
+    <!-- HOME ACTIVITY -->
+    <style name="home_activity_title" parent="titles">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="home_activity_card_titles" parent="titles">
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="home_activity_card_subtitles" parent="subtitles">
+
+    </style>
+
+    <style name="home_activity_icon_btn">
+        <item name="android:layout_height">@dimen/home_activity_btn_height_68</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="iconTint">@color/black</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="iconSize">32dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="home_activity_cards">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+
+    </style>
+
+    <style name="main_activity_text_input_layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_marginVertical">10dp</item>
+        <item name="android:layout_marginHorizontal">25dp</item>
+        <item name="startIconDrawable">@drawable/baseline_face_black_24dp</item>
+        <item name="boxBackgroundColor">@color/register_activity_inputs_background</item>
+        <item name="endIconMode">password_toggle</item>
+    </style>
+
+    <style name="main_activity_autocomplete_input" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">18dp</item>
+        <item name="android:layout_marginHorizontal">25dp</item>
+        <item name="boxBackgroundColor">@color/register_activity_inputs_background</item>
+        <item name="endIconMode">dropdown_menu</item>
+    </style>
+
+    <style name="autocomplete_text_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:inputType">none</item>
+        <item name="android:paddingLeft">12dp</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/register_activity_btn_yellow_disabled</item>
+        <item name="android:enabled">false</item>
+        <item name="android:layout_marginVertical">49dp</item>
+        <item name="android:paddingHorizontal">58dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.buttonText</item>
+    </style>
+
+    <style name="TextAppearance.buttonText" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

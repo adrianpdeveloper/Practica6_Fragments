@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/activity_main_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nomads_city_tour" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/activity_main_title"
+        style="@style/MainActivity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="6dp"
+        android:text="@string/main_activity_title"
+        app:layout_constraintBottom_toTopOf="@+id/register_activity_login_il"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_image"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_activity_login_il"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/main_activity_login_il_hint"
+        app:layout_constraintBottom_toTopOf="@+id/register_activity_password_il"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_activity_login_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_activity_password_il"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/main_activity_password_il_hint"
+        app:endIconDrawable="@drawable/baseline_lock_black_24dp"
+        app:endIconMode="password_toggle"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_login_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_activity_login_il">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_activity_password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/activity_main_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginVertical="24dp"
+        android:layout_marginHorizontal="16dp"
+        app:icon="@drawable/baseline_arrow_forward_white_24dp"
+        android:text="@string/main_activity_login_button"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/register_activity_password_il"
+        style="@style/Widget.MaterialComponents.Button"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:enabled="false"
+        android:textSize="24sp"
+        app:iconGravity="textEnd"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/activity_main_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:text="@string/main_activity_tv1"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_tv2_get_new"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_login_btn"
+        android:layout_marginVertical="12dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/activity_main_tv2_get_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_tv2_get_new"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_main_tv1"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_tv1"
+        android:layout_marginHorizontal="5dp"
+        style="@style/MainActivity_bold_links" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/activity_main_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_tv3"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_tv4_create_new"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_tv1"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/activity_main_tv4_create_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_tv4_create_new"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/activity_main_tv3"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_tv3"
+        android:layout_marginHorizontal="5dp"
+        style="@style/MainActivity_bold_links"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

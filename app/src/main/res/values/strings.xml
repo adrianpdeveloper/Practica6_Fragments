@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Practica3_Vistas</string>
+    <string name="main_activity_title">Login</string>
+    <string name="main_activity_login_il_hint">Login</string>
+    <string name="main_activity_password_il_hint">Password</string>
+    <string name="main_activity_login_button">Login</string>
+    <string name="main_activity_tv1">Forgot password</string>
+    <string name="main_activity_tv2_get_new">Get new</string>
+    <string name="main_activity_tv3">Do you have an account?</string>
+    <string name="main_activity_tv4_create_new">Create new</string>
+    <string name="main_activity_snackbar_not_available_function">This function will be available in future versions.</string>
+    <string name="main_activity_login_failed">Fallo en el login. Revisa los parámetros.</string>
+
+
+    <!--HOME ACTIVITY-->
+    <string name="home_title">Upcoming meetups</string>
+    <string name="home_card1_title">City of Los Angeles</string>
+    <string name="home_card1_subtitle">USA, Los Angeles - 2 Weeks</string>
+    <string name="home_card2_title">Beach vacation</string>
+    <string name="home_card2_subtitle">Madives - 3 Weeks</string>
+    <string name="home_activity_title">Upcoming meetups</string>
+
+    <!-- REGISTER ACTIVITY -->
+    <string name="register_activity_name_inputtext_hint">¿Como te llamas?</string>
+    <string name="register_activity_password_inputtext_hint">Contraseña</string>
+    <string name="register_activity_age_inputtext_hint">¿Cuantos años tienes?</string>
+    <string name="register_activity_button">Me apunto</string>
+    <string name="register_activity_privacidad">Política de Privacidad</string>
+    <string name="register_activity_condiciones">Ver Condiciones</string>
+    <array name="register_activity_age_inputtext_options">
+        <item>0-5</item>
+        <item>6-11</item>
+        <item>12-17</item>
+        <item>@string/mayor_de_edad</item>
+    </array>
+    <string name="mayor_de_edad">18-99</string>
+    <string name="set_error_name_surname_input">Los caracteres \'@\' y \'!\' no estan permitidos.</string>
+    <string name="set_error_age_input">Esta app no es para ti.</string>
+</resources>
