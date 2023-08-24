@@ -5,22 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_activity_background_green"
-    tools:context=".MainActivity">
+    tools:context=".login.LoginActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/main_activity_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/primary_green"
-            app:title="Registro prueba"
-            app:titleTextColor="@color/white" />
-    </com.google.android.material.appbar.AppBarLayout>
+<Space
+    android:id="@+id/spacer"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"/>
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/main_activity_profile_pic"
@@ -32,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/main_activity_age_inputlayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintTop_toBottomOf="@+id/spacer"
         app:srcCompat="@drawable/imagen_registro" />
 
     <com.google.android.material.button.MaterialButton
@@ -91,12 +82,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_activity_profile_pic"
         app:layout_constraintStart_toEndOf="@+id/main_activity_password_inputlayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_activity_password_inputlayout">
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_password_inputlayout"
+        android:layout_marginBottom="25dp"
+        >
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/main_activity_age_autocomplete"
-            style="@style/autocomplete_text_view" />
+            android:id="@+id/register_fragment_age_autocomplete"
+            style="@style/autocomplete_text_view"
+            android:completionThreshold="1"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton

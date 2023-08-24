@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Practica3_Vistas</string>
+    <string name="app_name">Practica5.1_Toolbar</string>
     <string name="main_activity_title">Login</string>
     <string name="main_activity_login_il_hint">Login</string>
     <string name="main_activity_password_il_hint">Password</string>
@@ -36,4 +36,9 @@
     <string name="mayor_de_edad">18-99</string>
     <string name="set_error_name_surname_input">Los caracteres \'@\' y \'!\' no estan permitidos.</string>
     <string name="set_error_age_input">Esta app no es para ti.</string>
+    <string name="register_activity_toolbar_title">Registro</string>
+    <string name="eurodisney_menu">Eurodisney</string>
+    <string name="coche_menu">Coche</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rent_car_fragment">Alquilar coche</string>
 </resources>

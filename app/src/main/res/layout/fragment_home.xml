@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.fragments.HomeFragment"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginTop="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/homeactivity_title"
+        style="@style/home_activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_activity_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeactivity_btn1"
+        style="@style/home_activity_icon_btn"
+        app:icon="@drawable/baseline_camera_alt_black_24dp"
+        android:backgroundTint="@color/home_blue"
+        app:layout_constraintEnd_toStartOf="@+id/homeactivity_btn3"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_title"
+        android:layout_marginEnd="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeactivity_btn3"
+        style="@style/home_activity_icon_btn"
+        android:backgroundTint="@color/home_purple"
+        app:icon="@drawable/baseline_favorite_black_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/homeactivity_btn2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeactivity_btn1"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_title"
+        android:layout_marginHorizontal="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeactivity_btn2"
+        style="@style/home_activity_icon_btn"
+        android:backgroundTint="@color/home_pink"
+        app:icon="@drawable/baseline_terrain_black_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/homeactivity_btn4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeactivity_btn3"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_title"
+        android:layout_marginHorizontal="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeactivity_btn4"
+        style="@style/home_activity_icon_btn"
+        android:backgroundTint="@color/home_yellow"
+        app:icon="@drawable/baseline_face_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeactivity_btn2"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_title"
+        android:layout_marginStart="8dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/homeactivity_fragment_frame"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_btn1"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/homeactivity_card1"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_fragment_frame"
+        style="@style/home_activity_cards"
+        app:cardPreventCornerOverlap="true"
+        app:cardElevation="2dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/homeactivity_card1_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_card1_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/homeactivity_card1_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/home_card1_subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeactivity_card1_image"
+                style="@style/home_activity_card_subtitles"
+                android:layout_marginTop="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/homeactivity_card1_title"
+                style="@style/home_activity_card_titles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/home_card1_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeactivity_card1_subtitle"
+                android:layout_marginBottom="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/homeactivity_card2"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeactivity_card1"
+        style="@style/home_activity_cards"
+        app:cardElevation="2dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/homeactivity_card2_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_card2_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/homeactivity_card2_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/home_card2_subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeactivity_card2_image"
+                style="@style/home_activity_card_subtitles"
+                android:layout_marginTop="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/homeactivity_card2_title"
+                style="@style/home_activity_card_titles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/home_card2_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeactivity_card2_subtitle"
+                android:layout_marginBottom="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

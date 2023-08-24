@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/menu_disney" android:icon="@drawable/baseline_castle_white_24dp" android:title="@string/eurodisney_menu" app:showAsAction="always"/>
+    <item android:id="@+id/menu_coche" android:icon="@drawable/baseline_directions_car_white_24dp" android:title="@string/coche_menu" app:showAsAction="always"/>
+</menu>

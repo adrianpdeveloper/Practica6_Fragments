@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RentCarFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/homeactivity_card1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        cardCornerRadius="12dp"
+        style="@style/home_activity_cards"
+        cardPreventCornerOverlap="true"
+        cardElevation="2dp"
+        app:cardBackgroundColor="@color/purple_200"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="50dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/rent_car_fragment"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

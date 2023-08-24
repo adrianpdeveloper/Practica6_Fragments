@@ -1,44 +1,76 @@
-package com.tokioschool.practica5_intentsexplicitos;
+package com.tokioschool.practica5_intentsexplicitos.login.fragments;
 
-import static com.tokioschool.practica5_intentsexplicitos.Constants.KEY_NAME_STRING;
-import static com.tokioschool.practica5_intentsexplicitos.Constants.KEY_PASSWORD_STRING;
+import static com.tokioschool.practica5_intentsexplicitos.Constants.KEY_USER;
+import static com.tokioschool.practica5_intentsexplicitos.Constants.REQUEST_KEY_PARENT_FRAGMENT;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.tokioschool.practica5_intentsexplicitos.R;
+import com.tokioschool.practica5_intentsexplicitos.databinding.FragmentRegisterBinding;
+import com.tokioschool.practica5_intentsexplicitos.login.LoginActivity;
+import com.tokioschool.practica5_intentsexplicitos.model.User;
 
-import com.tokioschool.practica5_intentsexplicitos.databinding.ActivityRegisterBinding;
+import java.util.ArrayList;
 
+public class RegisterFragment extends Fragment {
 
-public class RegisterActivity extends AppCompatActivity {
-    ActivityRegisterBinding binding;
+    private FragmentRegisterBinding binding;
     String[] ageOptions;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.mainActivityToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    public RegisterFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        binding = FragmentRegisterBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
         setup();
         abrirCamara();
         verCondiciones();
         corregirTexto();
+        mostrarToolbar();
+    }
 
-
+    private void mostrarToolbar() {
+        LoginActivity loginActivity = (LoginActivity) getActivity();
+        loginActivity.mostrarToolbar();
     }
 
     private void enableButton() {
-        if (binding.mainActivityNameInputlayout.getError()==null && binding.mainActivityPasswordInputlayout.getError()==null && binding.mainActivityAgeAutocomplete.getText().toString().equalsIgnoreCase(getString(R.string.mayor_de_edad))){
+        if (binding.mainActivityNameInputlayout.getError()==null && binding.mainActivityPasswordInputlayout.getError()==null && binding.registerFragmentAgeAutocomplete.getText().toString().equalsIgnoreCase(getString(R.string.mayor_de_edad))){
             binding.mainActivityButton.setEnabled(true);
             binding.mainActivityButton.setBackgroundColor(getResources().getColor(R.color.register_activity_btn_yellow_enabled,null));
         }else{
@@ -92,7 +124,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        binding.mainActivityAgeAutocomplete.addTextChangedListener(new TextWatcher() {
+        binding.registerFragmentAgeAutocomplete.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {}
@@ -104,35 +136,37 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (binding.mainActivityAgeAutocomplete.getText().toString().equalsIgnoreCase(getString(R.string.mayor_de_edad))){
+                if (binding.registerFragmentAgeAutocomplete.getText().toString().equalsIgnoreCase(getString(R.string.mayor_de_edad))){
                     binding.mainActivityAgeInputlayout.setError(null);
                 }else{
                     binding.mainActivityAgeInputlayout.setError(getResources().getString(R.string.set_error_age_input));
                 }
-                    enableButton();
+                enableButton();
             }
         });
 
-        binding.mainActivityToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         binding.mainActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString(KEY_NAME_STRING,binding.mainActivityNameEdittext.getText().toString());
-                bundle.putString(KEY_PASSWORD_STRING,binding.mainActivityPasswordEdittext.getText().toString());
+                User user = new User();
+                user.setUsername(binding.mainActivityNameEdittext.getText().toString());
+                user.setPassword(binding.mainActivityPasswordEdittext.getText().toString());
+                bundle.putParcelable(KEY_USER, user);
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class).putExtra("bundle",bundle);
-                startActivity(intent);
+                getParentFragmentManager().setFragmentResult(REQUEST_KEY_PARENT_FRAGMENT, bundle);
+                getParentFragmentManager().popBackStack();
             }
         });
-
+        binding.registerFragmentAgeAutocomplete.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    binding.registerFragmentAgeAutocomplete.showDropDown();
+                }
+            }
+        });
 
     }
 
@@ -145,18 +179,28 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void abrirCamara() {
         binding.mainActivityCameraBtn.setOnClickListener(view -> {
-             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-             startActivity(intent);
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivity(intent);
         });
     }
 
     private void setup() {
+        Log.e("Setup","Setup");
         ageOptions = getResources().getStringArray(R.array.register_activity_age_inputtext_options);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, ageOptions);
-        binding.mainActivityAgeAutocomplete.setAdapter(adapter);
+        ArrayList<String> ageOptions2 = new ArrayList<String>();
+        ageOptions2.add("Hola1");
+        ageOptions2.add("Hola2");
+        ageOptions2.add("Hola3");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_dropdown_item_1line, ageOptions);
+        binding.registerFragmentAgeAutocomplete.setAdapter(adapter);
+        binding.registerFragmentAgeAutocomplete.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (getView().hasFocus()){
+                    binding.registerFragmentAgeAutocomplete.showDropDown();
+                }
+            }
+        });
+
     }
-
-
-
-
 }

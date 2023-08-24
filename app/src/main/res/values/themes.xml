@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Practica5_IntentsExplicitos" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/greyPrimary</item>
+        <item name="colorPrimary">@color/primary_green</item>
         <item name="colorPrimaryVariant">@color/grey</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
